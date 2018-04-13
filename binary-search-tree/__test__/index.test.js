@@ -41,4 +41,44 @@ describe('Binary Search Tree', () => {
       expect(result).toBeTruthy();
     })
   });
+
+  describe('#findMax method', () => {
+    it('should return the highest value in the tree', () => {
+      let result = this.bst.findMax();
+      expect(result).toBe(80);
+    })
+  });
+
+  describe('#findMin method', () => {
+    it('should return the lowest value in the tree', () => {
+      let result = this.bst.findMin();
+      expect(result).toBe(5);
+    })
+  });
+
+  describe('#calcHeight method', () => {
+    it('should return the height of the tree', () => {
+      let result = this.bst.calcHeight(this.bst.root);
+      expect(result).toBe(2);
+    })
+
+    it('should return a new height of the tree if a node is added', () => {
+      this.bst.insert(new TreeNode(2));
+      this.bst.insert(new TreeNode(1));
+      let result = this.bst.calcHeight(this.bst.root);
+      expect(result).toBe(3);
+    })
+  });
+  
+  describe('#findNearest method', () => {
+    it('should return the nearest node to 3', () => {
+      let result = this.bst.findNearest(this.bst.root, 3);
+      expect(result).toBe(5);
+    })
+
+    it('should return the nearest node to 70', () => {
+      let result = this.bst.findNearest(this.bst.root, 70);
+      expect(result).toBe(80);
+    })
+  })
 });

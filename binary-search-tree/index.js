@@ -55,8 +55,52 @@ exports.BST = class {
     return returnVal;
   }
   
-  // Implement findMax as a method of your BinarySearchTree.
-  // Implement findMin as a method of your BinarySearchTree.
-  // Implement calcHeight as a method of your BinarySearchTree - this should determine the height of the tree.
-  // Implement findNearest as a method of your BinarySearchTree - this should return a node with a value closest to the value you pass it.
+  findMax() {
+    let maxVal = 0;
+    _traverse(this.root);
+
+    function _traverse(tree) {
+      if (tree.val > maxVal) maxVal = tree.val;
+      if (tree.left) _traverse(tree.left);
+      if (tree.right) _traverse(tree.right);
+      }
+    return maxVal;
+  }
+
+  findMin() {
+    let minVal;
+    _traverse(this.root);
+
+    function _traverse(tree) {
+      if (tree.val < minVal || !minVal) minVal = tree.val;
+      if (tree.left) _traverse(tree.left);
+      if (tree.right) _traverse(tree.right);
+    }
+    return minVal;
+  }
+
+  // got help from: http://blog.benoitvallon.com/data-structures-in-javascript/the-binary-search-tree-data-structure/
+  calcHeight(tree) {
+    if (!tree) return -1;
+    let left = this.calcHeight(tree.left);
+    let right = this.calcHeight(tree.right);
+    return Math.max(left, right) + 1;
+  }
+
+  findNearest(tree, nearest) {
+    let result = tree.val;
+    let diff = Math.abs(result - nearest);
+    _traverse(tree);
+
+    function _traverse(tree) {
+      if (!tree) return;
+      if (Math.abs(tree.val - nearest) < diff) {
+        diff = Math.abs(tree.val - nearest);
+        result = tree.val;
+      }
+      _traverse(tree.left);
+      _traverse(tree.right);
+    }
+    return result;
+  }
 }
