@@ -12,7 +12,7 @@ exports.BST = class {
     if (!this.root) {
       this.root = newNode;
     } else {
-    _insert(this.root, newNode);
+      _insert(this.root, newNode);
     }
 
     function _insert(root, newNode) {
@@ -30,7 +30,6 @@ exports.BST = class {
         }
       }
     }
-  
   }
 
   find(value) {
@@ -54,7 +53,7 @@ exports.BST = class {
     }
     return returnVal;
   }
-  
+
   findMax() {
     let maxVal = 0;
     _traverse(this.root);
@@ -63,7 +62,7 @@ exports.BST = class {
       if (tree.val > maxVal) maxVal = tree.val;
       if (tree.left) _traverse(tree.left);
       if (tree.right) _traverse(tree.right);
-      }
+    }
     return maxVal;
   }
 
@@ -103,4 +102,4 @@ exports.BST = class {
     }
     return result;
   }
-}
+};
