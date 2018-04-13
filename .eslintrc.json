@@ -12,12 +12,9 @@
     "res": true,
     "next": true
   },
+  "extends": "eslint:recommended",
   "parserOptions": {
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true,
-      "experimentalObjectRestSpread": true
-    }
+    "sourceType": "module"
   },
   "rules": {
     "no-console": "off",
@@ -25,8 +22,6 @@
     "quotes": ["error", "single", { "allowTemplateLiterals": true }],
     "comma-dangle": ["error", "always-multiline"],
     "semi": [ "error", "always" ],
-    "linebreak-style": ["error", "unix"],
-    "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error"
+    "linebreak-style": ["error", "unix"]
   }
 }
