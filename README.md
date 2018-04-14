@@ -34,14 +34,33 @@
 * Implement `calcHeight` as a method of your `BinarySearchTree` - this should determine the height of the tree.
 * Implement `findNearest` as a method of your `BinarySearchTree` - this should return a node with a value closest to the value you pass it.
 
-### Stretch Goals
-##### Hashmap
-* Implement a `HashMap`.
-* Implement `set` as a method of your `HashMap`
+## Directory
+* **binary-search-tree/**  
+  * **index.js**
+  * **__test__/**
+    * **index.test.js**
+  * **lib/**
+    * **node.js**
+* **linked-list/**  
+  * **index.js**
+  * **__test__/**
+    * **index.test.js**
+  * **lib/**
+    * **node.js**
+* **list/**  
+  * **index.js**
+  * **__test__/**
+    * **index.test.js**
+* **queue/**  
+  * **index.js**
+  * **__test__/**
+    * **index.test.js**
+  * **lib/**
+    * **node.js**
+* **stack/**
+  * **index.js**
+  * **__test__/**
+    * **index.test.js**
+  * **lib/**
+    * **node.js**
 
-##### Binary Search Tree
-* Implement `remove` as a method of your `BinarySearchTree` - this should shift any nodes that need to be shifted so that the tree remains in order.
-* Implement `compareBST` as a method of your `BinarySearchTree` - this should compare 2 binary search trees and determine if they are structured the same.
-
-### Testing
-* Test **all** of the methods that you've created for each data structure.
